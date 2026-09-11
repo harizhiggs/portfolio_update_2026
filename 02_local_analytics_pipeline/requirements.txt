@@ -1,0 +1,9 @@
+# Core pipeline dependencies (2_sql + 3_pipeline)
+duckdb>=1.0.0,<2.0.0
+pandas>=2.0.0,<3.0.0
+matplotlib>=3.8.0,<4.0.0
+
+# scripts/setup.bat, setup.ps1, and setup.sh install requirements-notebook.txt
+# (which includes this file) so the exercises notebook works out of the box.
+# Install this file alone only if you specifically don't want Jupyter:
+#   pip install -r requirements.txt
