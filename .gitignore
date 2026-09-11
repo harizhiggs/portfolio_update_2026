@@ -1,0 +1,13 @@
+# Never publish inputs or generated outputs
+**/sample_inputs/
+**/data/
+**/raw/
+**/processed/
+**/*.csv
+**/*.xlsx
+**/*.parquet
+**/*.duckdb
+**/*.json
+**/__pycache__/
+*.py[cod]
+.venv/

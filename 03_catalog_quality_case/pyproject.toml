@@ -1,0 +1,37 @@
+[project]
+name = "sda-interview"
+version = "0.1.0"
+description = "Senior Data Analyst live interview package"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas~=3.0",
+    "numpy~=2.5",
+    "jupyterlab~=4.6",
+    "pandas-stubs~=3.0.3",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.15",
+    "mdformat>=1.0",
+    "mdformat-gfm>=1.0",
+]
+
+# This is an application, not a library: don't try to build/install the project itself.
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+extend-exclude = ["*.ipynb", "data"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+# The formatter owns line length; don't double-flag long content strings/URLs.
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+# The candidate scripts are intentionally buggy/incomplete: `manufacturers` is an
+# unused scaffold the candidate is meant to wire in (Task 5 parent roll-up).
+"candidate/scripts/*" = ["F841"]
